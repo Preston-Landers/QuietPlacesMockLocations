@@ -16,15 +16,20 @@ to have new locations, or ideally read the locations from a file or website.
 
 In other words, nothing has been done.
 
+What I would like to do is set up this app to read a sequence of locations from a
+website that we set up. It does not have to be anything complex. Just a series of comma separated
+values in a text file.
+
 # Usage
 
-This is how this app is supposed to be used, in theory:
+This is how this app is supposed to be used.
 
-1. Install the mock location provider app on a device that has Google Play services installed.
+1. Install this app (the mock location provider) on a device that has Google Play services installed.
 Location Services is part of Google Play services.
 
 2. On the device, enable mock locations. To learn how to do this, see the topic
-Setting up a Device for Development in the link above.
+Setting up a Device for Development in the link above. Basically go into Settings -> Developer Options
+and enable Mock Locations there.
 
 3. Start the provider app from the Launcher, then choose the options you want from the main screen.
 

@@ -22,7 +22,7 @@ package edu.utexas.quietplaces.mocklocations;
 public final class LocationUtils {
 
     // Debugging tag for the application
-    public static final String APPTAG = "Location Mock Tester";
+    public static final String APPTAG = "QuietPlaces Location Mock Tester";
 
     // Create an empty string for initializing strings
     public static final String EMPTY_STRING = new String();
