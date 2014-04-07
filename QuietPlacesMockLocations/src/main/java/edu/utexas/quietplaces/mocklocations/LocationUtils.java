@@ -92,27 +92,28 @@ public final class LocationUtils {
     // The name used for all mock locations
     public static final String LOCATION_PROVIDER = "fused";
 
+    //  Locations for JJ Pickle Research Campus, The University of Texas at Austin
     // An array of latitudes for constructing test data
     public static final double[] WAYPOINTS_LAT = {
-    37.377166,
-    37.380866,
-    37.381224,
-    37.382008,
-    37.385486,
-    37.387021,
-    37.384847,
-    37.385461};
+    30.387157,
+    30.387275,
+    30.387076,
+    30.386157,
+    30.385926,
+    30.387411,
+    30.387865,
+    30.388887};
 
     // An array of longitudes for constructing test data
     public static final double[] WAYPOINTS_LNG = {
-    -122.086966,
-    -122.086945,
-    -122.086344,
-    -122.086151,
-    -122.083941,
-    -122.083104,
-    -122.078683,
-    -122.078265};
+    -97.727037,
+    -97.726061,
+    -97.726759,
+    -97.727036,
+    -97.728077,
+    -97.729949,
+    -97.730067,
+    -97.729247};
 
     // An array of accuracy values for constructing test data
     public static final float[] WAYPOINTS_ACCURACY = {
