@@ -198,7 +198,7 @@ public final class LocationUtils {
     3.12f,  //05
     3.0f,   //06
     3.12f,  //07
-    3.7f,   //08 original number
+    3.7f,   //08 orig
     3.0f,   //09
     3.12f,  //  10
     3.0f,   //11
