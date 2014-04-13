@@ -11,12 +11,12 @@ http://developer.android.com/training/location/location-testing.html
 
 This app is currently just the sample app given by Google.
 
-It has a few hardcoded locations but you're supposed to customize the app
-to have new locations, or ideally read the locations from a file or website.
+It has a 46 hardcoded locations but you're supposed to customize the app
+to read the locations from a file or website.
 
-In other words, nothing has been done.
+Locations for JJ Pickle Research Campus, The University of Texas at Austin
 
-What I would like to do is set up this app to read a sequence of locations from a
+in the future we will set up this app to read a sequence of locations from a
 website that we set up. It does not have to be anything complex. Just a series of comma separated
 values in a text file.
 

@@ -21,8 +21,8 @@
     <string name="manage_mock_testing_banner">Manage mock location testing</string>
     <string name="one_run_button_text">Run once</string>
     <string name="location_test_finish">Test run finished</string>
-    <string name="app_status_label">App status:</string>
-    <string name="connection_status_label">Connection status:</string>
+    <string name="app_status_label">Quiet Places App STATUS:</string>
+    <string name="connection_status_label">Quiet Places Connection STATUS:</string>
     <string name="unknown_string_value">--unknown--</string>
     <string name="testing_started">Location testing started</string>
     <!-- Latitude, longitude format -->

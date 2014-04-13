@@ -92,7 +92,7 @@ public final class LocationUtils {
     // The name used for all mock locations
     public static final String LOCATION_PROVIDER = "fused";
 
-    //  Locations for JJ Pickle Research Campus, The University of Texas at Austin
+    //  Locations for JJ Pickle Research Campus, The University of Texas at Austin updated on 04-12-2014
     // An array of latitudes for constructing test data
     public static final double[] WAYPOINTS_LAT = {
     30.387203,  // 01   Commons Learning Center
@@ -200,7 +200,7 @@ public final class LocationUtils {
     3.12f,  //07
     3.7f,   //08 orig
     3.0f,   //09
-    3.12f,  //  10
+    3.12f,  //10
     3.0f,   //11
     3.12f,  //12
     3.5f,   //13
@@ -210,7 +210,7 @@ public final class LocationUtils {
     3.12f,  //17
     3.7f,   //18
     3.0f,   //19
-    3.12f,  //  20
+    3.12f,  //20
     3.0f,   //21
     3.12f,  //22
     3.5f,   //23
@@ -220,7 +220,7 @@ public final class LocationUtils {
     3.12f,  //27
     3.7f,   //28
     3.0f,   //29
-    3.12f,  //  30
+    3.12f,  //30
     3.0f,   //31
     3.12f,  //32
     3.5f,   //33
@@ -230,7 +230,7 @@ public final class LocationUtils {
     3.12f,  //37
     3.7f,   //38
     3.0f,   //39
-    3.12f,  //  40
+    3.12f,  //40
     3.0f,   //41
     3.12f,  //42
     3.5f,   //43

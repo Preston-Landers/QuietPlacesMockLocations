@@ -48,9 +48,9 @@ public class TestLocation {
      */
     public TestLocation() {
 
-        Id = "test";
-        Latitude = 37.4199338;
-        Longitude = -122.0818539;
+        Id = "UT PRC test";
+        Latitude = 30.387203;
+        Longitude = -97.72669;
         Accuracy = 3.0f;
     }
 }
