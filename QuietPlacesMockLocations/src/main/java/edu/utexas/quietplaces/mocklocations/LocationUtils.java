@@ -17,7 +17,7 @@
 package edu.utexas.quietplaces.mocklocations;
 
 /**
- *  Constants used in other classes in the app
+ * Constants used in other classes in the app
  */
 public final class LocationUtils {
 
@@ -35,7 +35,7 @@ public final class LocationUtils {
 
     // Conversion factor for time values
     public static final long NANOSECONDS_PER_SECOND =
-                    NANOSECONDS_PER_MILLISECOND * MILLISECONDS_PER_SECOND;
+            NANOSECONDS_PER_MILLISECOND * MILLISECONDS_PER_SECOND;
 
     /*
      * Action values sent by Intent from the main activity to the service
@@ -46,11 +46,11 @@ public final class LocationUtils {
 
     // Request continuous testing
     public static final String ACTION_START_CONTINUOUS =
-                    "edu.utexas.quietplaces.mocklocations.ACTION_START_CONTINUOUS";
+            "edu.utexas.quietplaces.mocklocations.ACTION_START_CONTINUOUS";
 
     // Stop a continuous test
     public static final String ACTION_STOP_TEST =
-                    "edu.utexas.quietplaces.mocklocations.ACTION_STOP_TEST";
+            "edu.utexas.quietplaces.mocklocations.ACTION_STOP_TEST";
 
     /*
      * Extended data keys for the broadcast Intent sent from the service to the main activity.
@@ -92,6 +92,7 @@ public final class LocationUtils {
     // The name used for all mock locations
     public static final String LOCATION_PROVIDER = "fused";
 
+/*
     //  Locations for JJ Pickle Research Campus, The University of Texas at Austin updated on 04-12-2014
     // An array of latitudes for constructing test data
     public static final double[] WAYPOINTS_LAT = {
@@ -237,6 +238,226 @@ public final class LocationUtils {
     3.7f,   //44
     3.12f,  //45
     3.0f};  //46
+*/
+
+
+    // The following points were generated from
+    // the "QuietPlaces Austin.kmz" file on Google Drive
+    // as used by the extractTestData.py script.
+    // Updated 4/21/2014
+
+    public static final double[] WAYPOINTS_LAT = {
+            30.26666218560745,  // 0   Untitled Placemark
+            30.26616388366184,  // 1   Untitled Placemark
+            30.26566098390549,  // 2   Untitled Placemark
+            30.26584669121913,  // 3   Untitled Placemark
+            30.26876012482933,  // 4   Untitled Placemark
+            30.26911276283758,  // 5   Untitled Placemark
+            30.26928353206412,  // 6   Untitled Placemark
+            30.26945619955625,  // 7   Untitled Placemark
+            30.27845072695519,  // 8   Untitled Placemark
+            30.27944658571599,  // 9   Untitled Placemark
+            30.28022025853266,  // 10   Untitled Placemark
+            30.27996383249719,  // 11   Untitled Placemark
+            30.2799998334694,  // 12   Untitled Placemark
+            30.28020887522843,  // 13   Untitled Placemark
+            30.2802505159768,  // 14   Untitled Placemark
+            30.27976563756156,  // 15   Untitled Placemark
+            30.28027825811799,  // 16   Untitled Placemark
+            30.28066978879694,  // 17   Untitled Placemark
+            30.28091135024082,  // 18   Untitled Placemark
+            30.28103962529279,  // 19   Untitled Placemark
+            30.28066925634563,  // 20   Untitled Placemark
+            30.28103802336788,  // 21   Untitled Placemark
+            30.28158961415471,  // 22   Untitled Placemark
+            30.28239961776549,  // 23   Untitled Placemark
+            30.28356652673127,  // 24   Untitled Placemark
+            30.28401058358635,  // 25   Untitled Placemark
+            30.284312231995,  // 26   Untitled Placemark
+            30.28442482451198,  // 27   Untitled Placemark
+            30.28573430681488,  // 28   Untitled Placemark
+            30.28626888052704,  // 29   Untitled Placemark
+            30.2866063694676,  // 30   Untitled Placemark
+            30.28676133467996,  // 31   Untitled Placemark
+            30.28696002219407,  // 32   Untitled Placemark
+            30.28755273555359,  // 33   Untitled Placemark
+            30.2856409952898,  // 34   Untitled Placemark
+            30.28546267319536,  // 35   Untitled Placemark
+            30.2849382468996,  // 36   Untitled Placemark
+            30.28496821588526,  // 37   Untitled Placemark
+            30.28485567073177,  // 38   Untitled Placemark
+            30.28487832272581,  // 39   Untitled Placemark
+            30.28329665062009,  // 40   Untitled Placemark
+            30.28375922266917,  // 41   Untitled Placemark
+            30.28374124669888,  // 42   Untitled Placemark
+            30.28363921209206,  // 43   Untitled Placemark
+            30.28292726677044,  // 44   Untitled Placemark
+            30.2819701332689,  // 45   Untitled Placemark
+            30.28073203312825,  // 46   Untitled Placemark
+            30.27011844102005,  // 47   Untitled Placemark
+            30.26847859221816,  // 48   Untitled Placemark
+            30.26817260466306,  // 49   Untitled Placemark
+            30.26841881982167,  // 50   Untitled Placemark
+            30.26856445670131,  // 51   Untitled Placemark
+            30.26902510254989,  // 52   Untitled Placemark
+            30.26899601490847,  // 53   Untitled Placemark
+            30.27177787813933,  // 54   Untitled Placemark
+            30.27325718364995,  // 55   Untitled Placemark
+            30.2739683098445,  // 56   Texas State Library
+            30.27515322844826,  // 57   Untitled Placemark
+            30.27611629188143,  // 58   Untitled Placemark
+            30.27634671143449,  // 59   Untitled Placemark
+            30.27671130906993,  // 60   Untitled Placemark
+            30.2770622463537,  // 61   Untitled Placemark
+            30.27635246657126,  // 62   Untitled Placemark
+            30.27587682359599,  // 63   State Law Library
+            30.27650065140812,  // 64   Untitled Placemark
+            30.27006335118182,  // 65   Untitled Placemark
+            30.26935652175714   // 66   Paramount Theater
+    };
+
+    public static final double[] WAYPOINTS_LNG = {
+            -97.74855109686816,  // 0   Untitled Placemark
+            -97.74869767153345,  // 1   Untitled Placemark
+            -97.74861185453229,  // 2   Untitled Placemark
+            -97.74813669627071,  // 3   Untitled Placemark
+            -97.74276682159166,  // 4   Untitled Placemark
+            -97.74263366232307,  // 5   Untitled Placemark
+            -97.74283564429749,  // 6   Untitled Placemark
+            -97.74276785165077,  // 7   Untitled Placemark
+            -97.74144530073262,  // 8   Untitled Placemark
+            -97.74115667660341,  // 9   Untitled Placemark
+            -97.74074493172577,  // 10   Untitled Placemark
+            -97.73973147105956,  // 11   Untitled Placemark
+            -97.73916923627839,  // 12   Untitled Placemark
+            -97.73862014916959,  // 13   Untitled Placemark
+            -97.73911001039863,  // 14   Untitled Placemark
+            -97.73858450541663,  // 15   Untitled Placemark
+            -97.73805864371435,  // 16   Untitled Placemark
+            -97.73789014072212,  // 17   Untitled Placemark
+            -97.73759523573955,  // 18   Untitled Placemark
+            -97.7373074455332,  // 19   Untitled Placemark
+            -97.73747762571897,  // 20   Untitled Placemark
+            -97.73915367288164,  // 21   Untitled Placemark
+            -97.74092460988153,  // 22   Untitled Placemark
+            -97.74082064411799,  // 23   Untitled Placemark
+            -97.74076118424657,  // 24   Untitled Placemark
+            -97.74091389135802,  // 25   Untitled Placemark
+            -97.74123177689238,  // 26   Untitled Placemark
+            -97.74106006417981,  // 27   Untitled Placemark
+            -97.74166090943915,  // 28   Untitled Placemark
+            -97.74122907472628,  // 29   Untitled Placemark
+            -97.74115370977836,  // 30   Untitled Placemark
+            -97.741150596056,  // 31   Untitled Placemark
+            -97.74150336652176,  // 32   Untitled Placemark
+            -97.74147275770135,  // 33   Untitled Placemark
+            -97.74188215901327,  // 34   Untitled Placemark
+            -97.74215337814934,  // 35   Untitled Placemark
+            -97.7419753323222,  // 36   Untitled Placemark
+            -97.74240246711943,  // 37   Untitled Placemark
+            -97.74254636071935,  // 38   Untitled Placemark
+            -97.74269954947951,  // 39   Untitled Placemark
+            -97.7420879419722,  // 40   Untitled Placemark
+            -97.74292509620372,  // 41   Untitled Placemark
+            -97.74243304710032,  // 42   Untitled Placemark
+            -97.74233854683759,  // 43   Untitled Placemark
+            -97.74212413042919,  // 44   Untitled Placemark
+            -97.74227533489733,  // 45   Untitled Placemark
+            -97.74209532691965,  // 46   Untitled Placemark
+            -97.73952838612374,  // 47   Untitled Placemark
+            -97.74020045634418,  // 48   Untitled Placemark
+            -97.73962626627348,  // 49   Untitled Placemark
+            -97.73961616203523,  // 50   Untitled Placemark
+            -97.73958136520771,  // 51   Untitled Placemark
+            -97.73957577226524,  // 52   Untitled Placemark
+            -97.73846342060259,  // 53   Untitled Placemark
+            -97.73857684855894,  // 54   Untitled Placemark
+            -97.73807161620836,  // 55   Untitled Placemark
+            -97.73845157729397,  // 56   Texas State Library
+            -97.73769177217058,  // 57   Untitled Placemark
+            -97.73730387077731,  // 58   Untitled Placemark
+            -97.73812528993021,  // 59   Untitled Placemark
+            -97.73934500144729,  // 60   Untitled Placemark
+            -97.74076964073805,  // 61   Untitled Placemark
+            -97.7411010756211,  // 62   Untitled Placemark
+            -97.74117390122369,  // 63   State Law Library
+            -97.74221464314624,  // 64   Untitled Placemark
+            -97.7422593109856,  // 65   Untitled Placemark
+            -97.74191232366295   // 66   Paramount Theater
+    };
+
+    // An array of accuracy values for constructing test data
+    public static final float[] WAYPOINTS_ACCURACY = {
+            10.5f,  // 0   Untitled Placemark
+            1.5f,  // 1   Untitled Placemark
+            9.5f,  // 2   Untitled Placemark
+            1.5f,  // 3   Untitled Placemark
+            5.02f,  // 4   Untitled Placemark
+            10.5f,  // 5   Untitled Placemark
+            3.9f,  // 6   Untitled Placemark
+            5.02f,  // 7   Untitled Placemark
+            3.4f,  // 8   Untitled Placemark
+            5.02f,  // 9   Untitled Placemark
+            9.5f,  // 10   Untitled Placemark
+            5.02f,  // 11   Untitled Placemark
+            5.02f,  // 12   Untitled Placemark
+            3.4f,  // 13   Untitled Placemark
+            9.5f,  // 14   Untitled Placemark
+            1.5f,  // 15   Untitled Placemark
+            3.9f,  // 16   Untitled Placemark
+            5.02f,  // 17   Untitled Placemark
+            10.5f,  // 18   Untitled Placemark
+            1.5f,  // 19   Untitled Placemark
+            3.4f,  // 20   Untitled Placemark
+            9.5f,  // 21   Untitled Placemark
+            3.4f,  // 22   Untitled Placemark
+            10.5f,  // 23   Untitled Placemark
+            3.9f,  // 24   Untitled Placemark
+            3.9f,  // 25   Untitled Placemark
+            3.9f,  // 26   Untitled Placemark
+            10.5f,  // 27   Untitled Placemark
+            1.5f,  // 28   Untitled Placemark
+            3.4f,  // 29   Untitled Placemark
+            1.5f,  // 30   Untitled Placemark
+            5.02f,  // 31   Untitled Placemark
+            3.9f,  // 32   Untitled Placemark
+            10.5f,  // 33   Untitled Placemark
+            3.4f,  // 34   Untitled Placemark
+            1.5f,  // 35   Untitled Placemark
+            3.9f,  // 36   Untitled Placemark
+            9.5f,  // 37   Untitled Placemark
+            3.4f,  // 38   Untitled Placemark
+            3.9f,  // 39   Untitled Placemark
+            3.4f,  // 40   Untitled Placemark
+            10.5f,  // 41   Untitled Placemark
+            3.9f,  // 42   Untitled Placemark
+            9.5f,  // 43   Untitled Placemark
+            5.02f,  // 44   Untitled Placemark
+            5.02f,  // 45   Untitled Placemark
+            9.5f,  // 46   Untitled Placemark
+            9.5f,  // 47   Untitled Placemark
+            5.02f,  // 48   Untitled Placemark
+            3.9f,  // 49   Untitled Placemark
+            9.5f,  // 50   Untitled Placemark
+            3.9f,  // 51   Untitled Placemark
+            10.5f,  // 52   Untitled Placemark
+            3.9f,  // 53   Untitled Placemark
+            3.9f,  // 54   Untitled Placemark
+            9.5f,  // 55   Untitled Placemark
+            1.5f,  // 56   Texas State Library
+            5.02f,  // 57   Untitled Placemark
+            9.5f,  // 58   Untitled Placemark
+            3.4f,  // 59   Untitled Placemark
+            10.5f,  // 60   Untitled Placemark
+            1.5f,  // 61   Untitled Placemark
+            3.9f,  // 62   Untitled Placemark
+            5.02f,  // 63   State Law Library
+            5.02f,  // 64   Untitled Placemark
+            9.5f,  // 65   Untitled Placemark
+            3.4f   // 66   Paramount Theater
+    };
+
+
     // Mark the broadcast Intent with an action
     public static final String ACTION_SERVICE_MESSAGE =
             "edu.utexas.quietplaces.mocklocations.ACTION_SERVICE_MESSAGE";
