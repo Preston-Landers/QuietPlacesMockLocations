@@ -7,18 +7,17 @@ This app is based on code from here:
 
 http://developer.android.com/training/location/location-testing.html
 
-# TODO
+# Information
 
-This app is currently just the sample app given by Google.
+This app reads a series of Latiude,Longitude,Accuracy lines from a text file embedded in the app.
 
-It has a 46 hardcoded locations but you're supposed to customize the app
-to read the locations from a file or website.
+The test data is in the file src/main/res/raw/testdata.txt.
 
-Locations for JJ Pickle Research Campus, The University of Texas at Austin
+The sample data is a tour around downtown Austin which visits several churches and museums.
 
-in the future we will set up this app to read a sequence of locations from a
-website that we set up. It does not have to be anything complex. Just a series of comma separated
-values in a text file.
+It's intended to be played in a continuous loop with 1 sec interval (the minimum) between locations.
+
+This isn't necessarily a realistic path, but is enough to exercise the app.
 
 # Usage
 
@@ -32,6 +31,7 @@ Setting up a Device for Development in the link above. Basically go into Setting
 and enable Mock Locations there.
 
 3. Start the provider app from the Launcher, then choose the options you want from the main screen.
+Normally you can choose 1 second for each option.
 
 4. Unless you've removed the pause interval feature, the mock location provider app pauses for a few seconds, and
 then starts sending mock location data to Location Services.

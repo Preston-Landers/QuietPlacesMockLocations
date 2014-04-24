@@ -245,7 +245,7 @@ public final class LocationUtils {
     // the "QuietPlaces Austin.kmz" file on Google Drive
     // as used by the extractTestData.py script.
     // Updated 4/21/2014
-
+/*
     public static final double[] WAYPOINTS_LAT = {
             30.26666218560745,  // 0   Untitled Placemark
             30.26616388366184,  // 1   Untitled Placemark
@@ -456,6 +456,7 @@ public final class LocationUtils {
             9.5f,  // 65   Untitled Placemark
             3.4f   // 66   Paramount Theater
     };
+*/
 
 
     // Mark the broadcast Intent with an action

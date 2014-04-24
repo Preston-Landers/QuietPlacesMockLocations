@@ -39,7 +39,8 @@ LAT = "latitude"
 LONG = "longitude"
 ACC = "accuracy"
 
-ACCURACY_CHOICES = ["3.4", "10.5", "9.5", "1.5", "3.9", "5.02"]
+# ACCURACY_CHOICES = ["3.4", "10.5", "9.5", "1.5", "3.9", "5.02"]
+ACCURACY_CHOICES = ["3.4", "2.5", "1.5", "3.5", "2.6", "1.95"]
 
 def main():
     try:
@@ -56,9 +57,33 @@ def main():
     doc = wholeDoc.getElementsByTagName("Document")[0]
     folder = doc.getElementsByTagName("Folder")[0]
     for placemark in folder.getElementsByTagName("Placemark"):
-        pointData={}
         nameE = placemark.getElementsByTagName(NAME)[0]
         name = nameE.firstChild.nodeValue
+        
+        try:
+            # Handle line geometry
+            lineString = placemark.getElementsByTagName("LineString")[0]
+            coordsElem = lineString.getElementsByTagName("coordinates")[0]
+            
+            for point in coordsElem.firstChild.nodeValue.split(" "):
+                pointData={}
+                accuracy = random.choice(ACCURACY_CHOICES)
+                coords = point.split(",")
+                
+                longstr = coords[0]
+                lat = coords[1]
+
+                pointData[NAME] = name.strip()
+                pointData[LAT] = lat.strip()
+                pointData[LONG] = longstr.strip()
+                pointData[ACC] = accuracy.strip()
+                # print name, coords
+
+                pointsList.append(pointData)
+
+            continue
+        except IndexError:
+            pass
         try:
             point = placemark.getElementsByTagName("Point")[0]
         except IndexError:
@@ -68,20 +93,28 @@ def main():
         coords = coordsElem.firstChild.nodeValue.split(",")
         longstr = coords[0]
         lat = coords[1]
-        
         accuracy = random.choice(ACCURACY_CHOICES)
         
+        pointData={}
         pointData[NAME] = name
-        pointData[LAT] = lat
-        pointData[LONG] = longstr
-        pointData[ACC] = accuracy
+        pointData[LAT] = lat.strip()
+        pointData[LONG] = longstr.strip()
+        pointData[ACC] = accuracy.strip()
         # print name, coords
 
         pointsList.append(pointData)
 
 
-    print getJavaCode(pointsList)
+    # print getJavaCode(pointsList)
+    exportResourceFile(pointsList)
     return
+
+
+def exportResourceFile(pointsList):    
+    for point in pointsList:
+        print "%s,%s,%s" % (point[LAT], point[LONG], point[ACC])
+        
+    
 
 def getJavaCode(pointsList):
     TEMPLATE = """

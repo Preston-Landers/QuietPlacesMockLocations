@@ -16,12 +16,12 @@
 
 package edu.utexas.quietplaces.mocklocations;
 
+import android.util.Log;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
 import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener;
 import com.google.android.gms.location.LocationClient;
 
-import android.annotation.SuppressLint;
 import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Intent;
@@ -37,6 +37,12 @@ import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.TextUtils;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A Service that injects test Location objects into the Location Services back-end. All other
@@ -280,8 +286,14 @@ public class SendMockLocationService extends Service implements
         /*
          * Load the mock location data from MockLocationConstants.java
          */
-        mLocationArray = buildTestLocationArray(LocationUtils.WAYPOINTS_LAT,
-                LocationUtils.WAYPOINTS_LNG, LocationUtils.WAYPOINTS_ACCURACY);
+
+        LocationArray testData = getTestDataFromFile();
+        if (testData != null) {
+            mLocationArray = buildTestLocationArray(
+                    testData.lat_list,
+                    testData.lng_list,
+                    testData.accuracy_list);
+        }
 
         /*
          * Prepare to send status updates back to the main activity.
@@ -427,26 +439,67 @@ public class SendMockLocationService extends Service implements
         return Service.START_STICKY;
     }
 
+    private static class LocationArray {
+        public List<Double> lat_list;
+        public List<Double> lng_list;
+        public List<Float> accuracy_list;
+    }
+
+    private LocationArray getTestDataFromFile() {
+        // Collect the data into lists
+        List<Double> lat_list = new ArrayList<Double>();
+        List<Double> lng_list = new ArrayList<Double>();
+        List<Float> accuracy_list = new ArrayList<Float>();
+
+        BufferedReader reader = new BufferedReader(
+                new InputStreamReader(
+                        getResources().openRawResource(R.raw.testdata)));
+        String line;
+        try {
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.trim().split("\\s?+,\\s?+");
+                Double lat = Double.parseDouble(parts[0]);
+                Double lng = Double.parseDouble(parts[1]);
+                Float accuracy = Float.parseFloat(parts[2]);
+
+                lat_list.add(lat);
+                lng_list.add(lng);
+                accuracy_list.add(accuracy);
+            }
+        } catch (IOException e) {
+            Log.e("getTestDataFromFile", "Unable to read test data resource.", e);
+            return null;
+        }
+
+        // Marshal the results into an array
+        LocationArray result = new LocationArray();
+        result.lat_list = lat_list;
+        result.lng_list = lng_list;
+        result.accuracy_list = accuracy_list;
+        return result;
+    }
+
+
     /**
      * Build an array of test location data for later use.
      *
-     * @param lat_array An array of latitude values
-     * @param lng_array An array of longitude values
-     * @param accuracy_array An array of accuracy values
+     * @param lat_list An array of latitude values
+     * @param lng_list An array of longitude values
+     * @param accuracy_list An array of accuracy values
      *
      * @return An array of test location data
      */
-    private TestLocation[] buildTestLocationArray(double[] lat_array, double[] lng_array,
-        float[] accuracy_array) {
+    private TestLocation[] buildTestLocationArray(List<Double> lat_list, List<Double> lng_list,
+        List<Float> accuracy_list) {
 
         // Temporary array of location data
-        TestLocation[] location_array = new TestLocation[lat_array.length];
+        TestLocation[] location_array = new TestLocation[lat_list.size()];
 
         /*
          * Iterate through all the arrays of data. This loop assumes that the arrays
          * all have the same length.
          */
-        for (int index = 0; index < lat_array.length; index++) {
+        for (int index = 0; index < lat_list.size(); index++) {
 
             /*
              * For each location, create a new location storage object. Set the "provider"
@@ -455,9 +508,9 @@ public class SendMockLocationService extends Service implements
              */
             location_array[index] =
                     new TestLocation(Integer.toString(index),
-                            lat_array[index],
-                            lng_array[index],
-                            accuracy_array[index]);
+                            lat_list.get(index),
+                            lng_list.get(index),
+                            accuracy_list.get(index));
         }
 
         // Return the temporary array
