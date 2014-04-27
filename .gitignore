@@ -1,2 +1,5 @@
 .gradle
+.idea
+*.iml
+QuietPlacesMockLocations/*.iml
 test.txt
