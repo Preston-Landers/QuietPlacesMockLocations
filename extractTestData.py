@@ -22,8 +22,10 @@ Use this like:
 
 python extractTestData.py c:\path\to\doc.kml > test.txt
 
-5) Paste/insert the contents of the text file into the appropriate spot
-   in LocationUtils.java in QuietPlacesMockLocations
+5) Copy the resulting file to:
+
+    QuietPlacesMockLocations/src/main/res/raw/testdata.txt
+
 
 """
 
@@ -32,7 +34,7 @@ import sys
 import random
 import os
 
-DEFAULT_FILENAME = "c:\\Users\\Preston\\Documents\\doc.kml"
+DEFAULT_FILENAME = "doc.kml"
 
 NAME = "name"
 LAT = "latitude"
@@ -105,7 +107,6 @@ def main():
         pointsList.append(pointData)
 
 
-    # print getJavaCode(pointsList)
     exportResourceFile(pointsList)
     return
 
@@ -115,28 +116,6 @@ def exportResourceFile(pointsList):
         print "%s,%s,%s" % (point[LAT], point[LONG], point[ACC])
         
     
-
-def getJavaCode(pointsList):
-    TEMPLATE = """
-    public static final double[] WAYPOINTS_LAT = {
-%(latLines)s
-};
-
-    public static final double[] WAYPOINTS_LNG = {
-%(longLines)s
-};
-
-    // An array of accuracy values for constructing test data
-    public static final float[] WAYPOINTS_ACCURACY = {
-%(accuracyLines)s
-};
-"""
-
-    latLines = getLines(pointsList, LAT)
-    longLines = getLines(pointsList, LONG)
-    accuracyLines = getLines(pointsList, ACC)
-    
-    return TEMPLATE % locals()
 
 
 def getLines(pointsList, key):
