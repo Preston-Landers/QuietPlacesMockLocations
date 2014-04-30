@@ -16,6 +16,8 @@
 
 package edu.utexas.quietplaces.mocklocations;
 
+import android.os.*;
+import android.os.Process;
 import android.util.Log;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
@@ -26,14 +28,6 @@ import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Intent;
 import android.location.Location;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.HandlerThread;
-import android.os.IBinder;
-import android.os.Looper;
-import android.os.Message;
-import android.os.Process;
-import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.TextUtils;
@@ -193,7 +187,11 @@ public class SendMockLocationService extends Service implements
                 }
 
                 // Get the device uptime and the current clock time
-                elapsedTimeNanos = SystemClock.elapsedRealtimeNanos();
+                if (Build.VERSION.SDK_INT >= 17) {
+                    elapsedTimeNanos = SystemClock.elapsedRealtimeNanos();
+                } else {
+                    elapsedTimeNanos = SystemClock.elapsedRealtime() * 1000000;
+                }
                 currentTime = System.currentTimeMillis();
 
                 /*
@@ -209,7 +207,9 @@ public class SendMockLocationService extends Service implements
                          * Set the time values for the test location. Both an elapsed system uptime
                          * and the current clock time in UTC timezone must be specified.
                          */
-                        mockLocation.setElapsedRealtimeNanos(elapsedTimeNanos);
+                        if (Build.VERSION.SDK_INT >= 17) {
+                            mockLocation.setElapsedRealtimeNanos(elapsedTimeNanos);
+                        }
                         mockLocation.setTime(currentTime);
 
                         // Set the location accuracy, latitude, and longitude
