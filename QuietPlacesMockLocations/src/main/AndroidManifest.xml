@@ -21,7 +21,7 @@
 
     <uses-sdk
             android:minSdkVersion="17"
-            android:targetSdkVersion="19"/>
+            android:targetSdkVersion="20"/>
     <!--
         To use mock locations, an app must have request the "access mock locations" permission.
         The user accepts this request during installation.
