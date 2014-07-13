@@ -16,6 +16,7 @@
 
 package edu.utexas.quietplaces.mocklocations;
 
+import android.annotation.TargetApi;
 import android.os.*;
 import android.os.Process;
 import android.util.Log;
@@ -114,7 +115,6 @@ public class SendMockLocationService extends Service implements
      * thread if you want. This is often done to associate a Handler with a HandlerThread thread
      * that runs in the background.
      */
-
     public class UpdateHandler extends Handler {
 
         /**
